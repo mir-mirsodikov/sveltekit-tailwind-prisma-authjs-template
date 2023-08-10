@@ -1,38 +1,56 @@
-# create-svelte
+# SvelteKit + TailwindCSS + Prisma + Auth.js Template
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a template for SvelteKit with TailwindCSS, Prisma, and Auth.js.
 
-## Creating a project
+This template assumes that you understand the various technologies used in it. This template was created to help
+me build out these applications faster. It is very opinionated, and that is on purpose. I like these technologies and this
+stack. If you don't have a lot experience with these technologies, I would recommend learning them individually before
+trying to use this template.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Getting Started
+
+This repository is a template repository, so you can click the "Use this template" button to create a new repository with this template.
+
+## Environment Variables
+
+The environment variables are outlined in the `.env.example` file. You can copy this file to `.env` and fill in the values.
+
+
+# Authentication
+
+The authentication is handled by [Auth.js](https://authjs.dev/). The configuration for it lies in the `hooks.server.ts` file in the `src` directory.
+
+The auth providers used in this template are Google and GitHub. You can create OAuth apps for these providers at the following links:
+
+- [Google](https://console.cloud.google.com/apis/credentials)
+- [GitHub](https://github.com/settings/applications/new)
+
+You can also remove these providers and add your own. See the [Auth.js documentation](https://authjs.dev/reference/core) for more information.
+
+# Database
+
+This template uses [Prisma](https://www.prisma.io/) for the database. The configuration for it lies in the `prisma/schema.prisma` file. 
+The default database is SQLite, but you can change that to a database of your choice in the `datasource` block of the `schema.prisma` file.
+
+
+
+
+# Build and Run
+
+## Install dependencies
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Run the development server
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
+## Build for production
 
 ```bash
 npm run build
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
